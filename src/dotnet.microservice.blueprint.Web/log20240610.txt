@@ -1,0 +1,76 @@
+2024-06-10 11:43:55.104 +07:00 [INF] Registered 5 endpoints in 3,051 milliseconds.
+2024-06-10 11:43:56.639 +07:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA journal_mode = 'wal';
+2024-06-10 11:43:56.706 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Contributors" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Contributors" PRIMARY KEY AUTOINCREMENT,
+    "Name" TEXT NOT NULL,
+    "Status" INTEGER NOT NULL,
+    "PhoneNumber_CountryCode" TEXT NULL,
+    "PhoneNumber_Number" TEXT NULL,
+    "PhoneNumber_Extension" TEXT NULL
+);
+2024-06-10 11:43:56.845 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Contributors" AS "c")
+2024-06-10 11:43:56.902 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."Name", "c"."Status", "c"."PhoneNumber_CountryCode", "c"."PhoneNumber_Extension", "c"."PhoneNumber_Number"
+FROM "Contributors" AS "c"
+2024-06-10 11:43:57.021 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (Size = 7), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Contributors" ("Name", "Status")
+VALUES (@p0, @p1)
+RETURNING "Id";
+2024-06-10 11:43:57.039 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 8), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Contributors" ("Name", "Status")
+VALUES (@p0, @p1)
+RETURNING "Id";
+2024-06-10 11:43:57.180 +07:00 [INF] Now listening on: https://localhost:57679
+2024-06-10 11:43:57.181 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-10 11:43:57.184 +07:00 [INF] Hosting environment: Development
+2024-06-10 11:43:57.185 +07:00 [INF] Content root path: C:\Users\qvlinh\linh.vu.quach\projects\my-prj\dotnet-microservice-blueprint\dotnet.microservice.blueprint\src\dotnet.microservice.blueprint.Web
+2024-06-10 11:44:15.298 +07:00 [INF] Request starting HTTP/2 GET https://localhost:57679/ - null null
+2024-06-10 11:44:15.342 +07:00 [INF] Request finished HTTP/2 GET https://localhost:57679/ - 404 0 null 44.7958ms
+2024-06-10 11:44:15.355 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:57679/, Response status code: 404
+2024-06-10 11:44:20.180 +07:00 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger - null null
+2024-06-10 11:44:20.187 +07:00 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger - 302 0 null 7.8358ms
+2024-06-10 11:44:20.211 +07:00 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/index.html - null null
+2024-06-10 11:44:20.330 +07:00 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/index.html - 200 null text/html; charset=utf-8 118.1627ms
+2024-06-10 11:44:20.464 +07:00 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/swagger-ui.css - null null
+2024-06-10 11:44:20.470 +07:00 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/index.css - null null
+2024-06-10 11:44:20.471 +07:00 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/swagger-ui-bundle.js - null null
+2024-06-10 11:44:20.482 +07:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2024-06-10 11:44:20.486 +07:00 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/swagger-ui-standalone-preset.js - null null
+2024-06-10 11:44:20.488 +07:00 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/index.css - 200 218 text/css 17.7178ms
+2024-06-10 11:44:20.492 +07:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2024-06-10 11:44:20.504 +07:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2024-06-10 11:44:20.507 +07:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2024-06-10 11:44:20.515 +07:00 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/swagger-ui-bundle.js - 200 1385018 text/javascript 43.9931ms
+2024-06-10 11:44:20.515 +07:00 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/swagger-ui-standalone-preset.js - 200 230642 text/javascript 28.9676ms
+2024-06-10 11:44:20.515 +07:00 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/swagger-ui.css - 200 151213 text/css 50.8642ms
+2024-06-10 11:44:20.762 +07:00 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/v1/swagger.json - null null
+2024-06-10 11:44:20.846 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-06-10 11:44:21.302 +07:00 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 540.4911ms
+2024-06-10 11:44:25.155 +07:00 [INF] Application is shutting down...
+2024-06-10 11:45:57.373 +07:00 [INF] Registered 5 endpoints in 3,130 milliseconds.
+2024-06-10 11:45:58.729 +07:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2024-06-10 11:45:58.864 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Contributors" AS "c")
+2024-06-10 11:45:58.929 +07:00 [INF] Now listening on: https://localhost:57679
+2024-06-10 11:45:58.932 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-10 11:45:58.933 +07:00 [INF] Hosting environment: Development
+2024-06-10 11:45:58.934 +07:00 [INF] Content root path: C:\Users\qvlinh\linh.vu.quach\projects\my-prj\dotnet-microservice-blueprint\src\dotnet.microservice.blueprint.Web
+2024-06-10 11:46:04.971 +07:00 [INF] Request starting HTTP/2 GET https://localhost:57679/ - null null
+2024-06-10 11:46:05.009 +07:00 [INF] Request finished HTTP/2 GET https://localhost:57679/ - 404 0 null 38.7243ms
+2024-06-10 11:46:05.015 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:57679/, Response status code: 404
+2024-06-10 11:46:10.397 +07:00 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger - null null
+2024-06-10 11:46:10.404 +07:00 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger - 302 0 null 7.308ms
+2024-06-10 11:46:10.429 +07:00 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/index.html - null null
+2024-06-10 11:46:10.514 +07:00 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/index.html - 200 null text/html; charset=utf-8 85.3522ms
+2024-06-10 11:46:10.926 +07:00 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/v1/swagger.json - null null
+2024-06-10 11:46:11.016 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-06-10 11:46:11.395 +07:00 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 468.6998ms
+2024-06-10 11:46:26.684 +07:00 [INF] Application is shutting down...

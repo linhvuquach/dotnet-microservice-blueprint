@@ -1,0 +1,2 @@
+﻿namespace dotnet.microservice.blueprint.UseCases.Contributors;
+public record ContributorDTO(int Id, string Name, string? PhoneNumber);
